@@ -1,34 +1,26 @@
 {
   "summary": {
-    "generatedon": "2025-08-20T05:27:56Z",
-    "parser": "MultiReportParser (8x OpenCoverParser)",
-    "assemblies": 3,
-    "classes": 9,
-    "files": 9,
-    "coveredlines": 52,
-    "uncoveredlines": 447,
-    "coverablelines": 499,
-    "totallines": 1161,
-    "linecoverage": 10.4,
+    "generatedon": "2025-08-23T02:13:09Z",
+    "parser": "MultiReportParser (6x OpenCoverParser)",
+    "assemblies": 1,
+    "classes": 3,
+    "files": 3,
+    "coveredlines": 34,
+    "uncoveredlines": 13,
+    "coverablelines": 47,
+    "totallines": 97,
+    "linecoverage": 72.3,
     "coveredbranches": 0,
     "totalbranches": 0,
-    "coveredmethods": 12,
-    "totalmethods": 90,
-    "methodcoverage": 13.3
+    "coveredmethods": 7,
+    "totalmethods": 9,
+    "methodcoverage": 77.7
  },
   "coverage": {
     "assemblies": [
       { "name": "Test", "classes": 3, "coverage": 72.3, "coveredlines": 34, "coverablelines": 47, "totallines": 97, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 77.7, "coveredmethods": 7, "totalmethods": 9, "classesinassembly": [
         { "name": "room2", "coverage": 45.4, "coveredlines": 5, "coverablelines": 11, "totallines": 27, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 60, "coveredmethods": 3, "totalmethods": 5 },
         { "name": "room2_trigger", "coverage": 58.8, "coveredlines": 10, "coverablelines": 17, "totallines": 32, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 1, "totalmethods": 1 },
-        { "name": "SnapToTrigger", "coverage": 100, "coveredlines": 19, "coverablelines": 19, "totallines": 38, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 3, "totalmethods": 3 } ] },
-      { "name": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets", "classes": 5, "coverage": 1.1, "coveredlines": 5, "coverablelines": 426, "totallines": 988, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 3.9, "coveredmethods": 3, "totalmethods": 76, "classesinassembly": [
-        { "name": "UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.ActionBasedControllerManager", "coverage": 0.8, "coveredlines": 2, "coverablelines": 234, "totallines": 453, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 3.3, "coveredmethods": 1, "totalmethods": 30 },
-        { "name": "UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.DynamicMoveProvider", "coverage": 3.2, "coveredlines": 2, "coverablelines": 62, "totallines": 189, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 7.6, "coveredmethods": 1, "totalmethods": 13 },
-        { "name": "UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.GazeInputManager", "coverage": 2.2, "coveredlines": 1, "coverablelines": 45, "totallines": 95, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 14.2, "coveredmethods": 1, "totalmethods": 7 },
-        { "name": "UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.IncrementUIText", "coverage": 0, "coveredlines": 0, "coverablelines": 11, "totallines": 45, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 4 },
-        { "name": "UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.XRPokeFollowAffordance", "coverage": 0, "coveredlines": 0, "coverablelines": 74, "totallines": 206, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 0, "coveredmethods": 0, "totalmethods": 22 } ] },
-      { "name": "Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor", "classes": 1, "coverage": 50, "coveredlines": 13, "coverablelines": 26, "totallines": 76, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 40, "coveredmethods": 2, "totalmethods": 5, "classesinassembly": [
-        { "name": "UnityEditor.XR.Interaction.Toolkit.Samples.StarterAssetsSampleProjectValidation", "coverage": 50, "coveredlines": 13, "coverablelines": 26, "totallines": 76, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 40, "coveredmethods": 2, "totalmethods": 5 } ] } ]
+        { "name": "SnapToTrigger", "coverage": 100, "coveredlines": 19, "coverablelines": 19, "totallines": 38, "branchcoverage": null, "coveredbranches": 0, "totalbranches": 0, "methodcoverage": 100, "coveredmethods": 3, "totalmethods": 3 } ] } ]
   }
 }

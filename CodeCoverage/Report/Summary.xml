@@ -1,37 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>2025/8/20 - 13:27:57</Generatedon>
-    <Parser>MultiReportParser (8x OpenCoverParser)</Parser>
-    <Assemblies>3</Assemblies>
-    <Classes>9</Classes>
-    <Files>9</Files>
-    <Coveredlines>52</Coveredlines>
-    <Uncoveredlines>447</Uncoveredlines>
-    <Coverablelines>499</Coverablelines>
-    <Totallines>1161</Totallines>
-    <Linecoverage>10.4</Linecoverage>
+    <Generatedon>2025/8/23 - 10:13:09</Generatedon>
+    <Parser>MultiReportParser (6x OpenCoverParser)</Parser>
+    <Assemblies>1</Assemblies>
+    <Classes>3</Classes>
+    <Files>3</Files>
+    <Coveredlines>34</Coveredlines>
+    <Uncoveredlines>13</Uncoveredlines>
+    <Coverablelines>47</Coverablelines>
+    <Totallines>97</Totallines>
+    <Linecoverage>72.3</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
-    <Coveredmethods>12</Coveredmethods>
-    <Totalmethods>90</Totalmethods>
-    <Methodcoverage>13.3</Methodcoverage>
+    <Coveredmethods>7</Coveredmethods>
+    <Totalmethods>9</Totalmethods>
+    <Methodcoverage>77.7</Methodcoverage>
   </Summary>
   <Coverage>
     <Assembly name="Test" classes="3" coverage="72.3" coveredlines="34" coverablelines="47" totallines="97" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="7" totalmethods="9" methodcoverage="77.7">
       <Class name="room2" coverage="45.4" coveredlines="5" coverablelines="11" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="5" methodcoverage="60" />
       <Class name="room2_trigger" coverage="58.8" coveredlines="10" coverablelines="17" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
       <Class name="SnapToTrigger" coverage="100" coveredlines="19" coverablelines="19" totallines="38" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
-    </Assembly>
-    <Assembly name="Unity.XR.Interaction.Toolkit.Samples.StarterAssets" classes="5" coverage="1.1" coveredlines="5" coverablelines="426" totallines="988" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="76" methodcoverage="3.9">
-      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.ActionBasedControllerManager" coverage="0.8" coveredlines="2" coverablelines="234" totallines="453" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="30" methodcoverage="3.3" />
-      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.DynamicMoveProvider" coverage="3.2" coveredlines="2" coverablelines="62" totallines="189" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="13" methodcoverage="7.6" />
-      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.GazeInputManager" coverage="2.2" coveredlines="1" coverablelines="45" totallines="95" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="7" methodcoverage="14.2" />
-      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.IncrementUIText" coverage="0" coveredlines="0" coverablelines="11" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
-      <Class name="UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets.XRPokeFollowAffordance" coverage="0" coveredlines="0" coverablelines="74" totallines="206" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="22" methodcoverage="0" />
-    </Assembly>
-    <Assembly name="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor" classes="1" coverage="50" coveredlines="13" coverablelines="26" totallines="76" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="5" methodcoverage="40">
-      <Class name="UnityEditor.XR.Interaction.Toolkit.Samples.StarterAssetsSampleProjectValidation" coverage="50" coveredlines="13" coverablelines="26" totallines="76" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="5" methodcoverage="40" />
     </Assembly>
   </Coverage>
 </CoverageReport>
