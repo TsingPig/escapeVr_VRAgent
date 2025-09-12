@@ -1,0 +1,495 @@
+{
+  "taskUnit": [
+    {
+      "actionUnits": [
+        {
+          "type": "Grab",
+          "source_object_name": "Cube_salle1",
+          "source_object_fileID": 816818218,
+          "target_object_name": "collider_porte",
+          "target_object_fileID": 86838640
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.5,
+          "source_object_fileID": 86838640,
+          "condition": "Invoke DoorOpenScript.OnTriggerEnter when a Collider tagged 'Objet1' enters. Scene MonoBehaviour (guid: 5f8d06fe579502c4496842932d0afead) represents DoorOpenScript attached to 'collider_porte' with serialized fields myDoor = null and openTrigger = true. The colliding object is 'Cube_salle1' (id: 816818218) that implements SnapToTrigger (MonoBehaviour guid: 2723dba42bd113044ad231906b498006). Expect: if tag matches 'Objet1' and openTrigger is true, SnapToTrigger.Snap is called with trigger position, Animator.Play('DoorOpen') is attempted, 'collider_porte' is deactivated, and openTrigger becomes false.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "OnTriggerEnter",
+                  "parameter_fileID": [
+                    816818218
+                  ]
+                }
+              ]
+            }
+          ],
+          "triggerred_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "SnapToTrigger.Snap(trigger_pos=collider_porte.transform.position)",
+                  "parameter_fileID": [
+                    86838640
+                  ]
+                },
+                {
+                  "script_fileID": 0,
+                  "method_name": "Animator.Play(\"DoorOpen\", layer=0, normalizedTime=0.0)",
+                  "parameter_fileID": []
+                },
+                {
+                  "script_fileID": 0,
+                  "method_name": "GameObject.SetActive(false)",
+                  "parameter_fileID": [
+                    86838640
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Grab",
+          "source_object_name": "palteforme_cube",
+          "source_object_fileID": 546628669,
+          "target_object_name": "collider_porte",
+          "target_object_fileID": 86838640
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.5,
+          "source_object_fileID": 86838640,
+          "condition": "Negative path: OnTriggerEnter with an object tagged 'Objet1' but lacking SnapToTrigger (e.g., palteforme_cube id: 546628669). DoorOpenScript (guid: 5f8d06fe579502c4496842932d0afead) calls other.GetComponent<SnapToTrigger>() then snap.Snap(...) without null-check. Expect NullReferenceException at snap.Snap when openTrigger is true.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "OnTriggerEnter",
+                  "parameter_fileID": [
+                    546628669
+                  ]
+                }
+              ]
+            }
+          ],
+          "triggerred_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 0,
+                  "method_name": "Exception.NullReferenceException at DoorOpenScript.OnTriggerEnter (snap is null)",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.5,
+          "source_object_fileID": 86838640,
+          "condition": "Animator reference is null in scene MonoBehaviour for DoorOpenScript (myDoor: {fileID: 0}). Even with a valid 'Objet1' object that has SnapToTrigger (e.g., 816818218), after Snap succeeds the call to myDoor.Play(\"DoorOpen\") should throw a NullReferenceException.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "OnTriggerEnter",
+                  "parameter_fileID": [
+                    816818218
+                  ]
+                }
+              ]
+            }
+          ],
+          "triggerred_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "SnapToTrigger.Snap(trigger_pos=collider_porte.transform.position)",
+                  "parameter_fileID": [
+                    86838640
+                  ]
+                },
+                {
+                  "script_fileID": 0,
+                  "method_name": "Exception.NullReferenceException at DoorOpenScript.OnTriggerEnter (myDoor.Play)",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.5,
+          "source_object_fileID": 86838640,
+          "condition": "Idempotency/Deactivation check: After a successful trigger, DoorOpenScript sets gameObject.SetActive(false) and openTrigger=false. Verify that subsequent collisions do not fire OnTriggerEnter because the GameObject is inactive.",
+          "triggerring_events": [],
+          "triggerred_events": []
+        },
+        {
+          "type": "Grab",
+          "source_object_name": "Cube_salle3 (1)",
+          "source_object_fileID": 1131040470,
+          "target_object_name": "collider_porte",
+          "target_object_fileID": 86838640
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.5,
+          "source_object_fileID": 86838640,
+          "condition": "Cross-object validation: Repeat OnTriggerEnter with a different 'Objet1' object that also implements SnapToTrigger (Cube_salle3 (1), id: 1131040470, MonoBehaviour guid: 2723dba42bd113044ad231906b498006). Expect same behavior path as primary case.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "OnTriggerEnter",
+                  "parameter_fileID": [
+                    1131040470
+                  ]
+                }
+              ]
+            }
+          ],
+          "triggerred_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "SnapToTrigger.Snap(trigger_pos=collider_porte.transform.position)",
+                  "parameter_fileID": [
+                    86838640
+                  ]
+                },
+                {
+                  "script_fileID": 0,
+                  "method_name": "Animator.Play(\"DoorOpen\") or Exception.NullReferenceException if myDoor is null",
+                  "parameter_fileID": []
+                },
+                {
+                  "script_fileID": 0,
+                  "method_name": "GameObject.SetActive(false)",
+                  "parameter_fileID": [
+                    86838640
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Transform",
+          "source_object_name": "Room 1",
+          "source_object_fileID": 1447047946,
+          "target_position": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": -0.5
+          },
+          "target_rotation": {
+            "x": 0.0,
+            "y": 15.0,
+            "z": 0.0
+          },
+          "target_scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          },
+          "triggerring_events": [],
+          "triggerred_events": [],
+          "triggerring_time": 1.0
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.5,
+          "source_object_fileID": 86838640,
+          "condition": "DoorOpenScript.OnTriggerEnter positive path up to Animator call. Scene MonoBehaviour (guid: 5f8d06fe579502c4496842932d0afead, fileID: 11500000) is the settings for the attached DoorOpenScript on 'collider_porte', with serialized fields myDoor: {fileID: 0} (null) and openTrigger: 1 (true). Colliding object is 'Cube_salle1' (fileID: 816818218) which has SnapToTrigger attached (Scene MonoBehaviour guid: 2723dba42bd113044ad231906b498006, fileID: 11500000). Expectation: if CompareTag(\"Objet1\") is satisfied and openTrigger==true, DoorOpenScript gets SnapToTrigger, calls snap.Snap(transform.position); then attempts myDoor.Play(\"DoorOpen\") which should raise NullReferenceException due to myDoor being null. SetActive(false) and openTrigger=false will not execute after the exception.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "OnTriggerEnter",
+                  "parameter_fileID": [
+                    816818218
+                  ]
+                }
+              ]
+            }
+          ],
+          "triggerred_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "SnapToTrigger.Snap(trigger_pos = collider_porte.transform.position)",
+                  "parameter_fileID": [
+                    86838640
+                  ]
+                },
+                {
+                  "script_fileID": 0,
+                  "method_name": "Animator.Play(\"DoorOpen\", 0, 0.0) -> Expect NullReferenceException (myDoor is null)",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.5,
+          "source_object_fileID": 86838640,
+          "condition": "DoorOpenScript.OnTriggerEnter negative path: colliding object has tag 'Objet1' but NO SnapToTrigger component, e.g., 'palteforme_cube' (fileID: 546628669). Scene MonoBehaviour (guid: 5f8d06fe579502c4496842932d0afead, fileID: 11500000) will call other.GetComponent<SnapToTrigger()]; without null-check it then calls snap.Snap(...), causing NullReferenceException at snap.Snap.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "OnTriggerEnter",
+                  "parameter_fileID": [
+                    546628669
+                  ]
+                }
+              ]
+            }
+          ],
+          "triggerred_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 0,
+                  "method_name": "Exception.NullReferenceException at DoorOpenScript.OnTriggerEnter (snap is null)",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Cube_salle1",
+          "triggerring_time": 2.0,
+          "source_object_fileID": 816818218,
+          "condition": "Directly cover SnapToTrigger behavior. Scene MonoBehaviour (guid: 2723dba42bd113044ad231906b498006, fileID: 11500000) is the settings for the attached SnapToTrigger on 'Cube_salle1'. Call Snap using 'collider_porte'.transform.position to verify: (1) XRGrabInteractable and XRGeneralGrabTransformer are disabled, (2) Transform is moved to trigger position with +0.4f Y offset, (3) Rigidbody constraints set to FreezeAll, (4) isSnapped=true then, during Update, the object rotates around local Y.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "Snap",
+                  "parameter_fileID": [
+                    86838640
+                  ]
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.5,
+          "source_object_fileID": 86838640,
+          "condition": "Tag-mismatch branch coverage for DoorOpenScript.OnTriggerEnter: collide with an object NOT tagged 'Objet1' (e.g., if 'Cube_salle1' is tagged 'Cube' as per provided PrefabInstance meta). Expectation: CompareTag(\"Objet1\") fails, no calls to Snap, Animator.Play, SetActive, or openTrigger changes. Note: If in-scene tag for 'Cube_salle1' is actually 'Objet1' (as previously listed), this step requires another non-Objet1 object.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "OnTriggerEnter",
+                  "parameter_fileID": [
+                    816818218
+                  ]
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Transform",
+          "source_object_name": "Room 1",
+          "source_object_fileID": 1447047946,
+          "target_position": {
+            "x": 0.25,
+            "y": 0.0,
+            "z": -0.25
+          },
+          "target_rotation": {
+            "x": 0.0,
+            "y": 10.0,
+            "z": 0.0
+          },
+          "target_scale": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "triggerring_events": [],
+          "triggerred_events": [],
+          "triggerring_time": 1.0
+        },
+        {
+          "type": "Grab",
+          "source_object_name": "Cube_test",
+          "source_object_fileID": 1269095956,
+          "target_object_name": "collider_porte",
+          "target_object_fileID": 86838640
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.5,
+          "source_object_fileID": 86838640,
+          "condition": "DoorOpenScript.OnTriggerEnter with an object tagged 'Objet1' that lacks SnapToTrigger, to cover null-component exception path. Scene MonoBehaviour component (guid: 5f8d06fe579502c4496842932d0afead, fileID: 11500000) is the settings for the attached DoorOpenScript on 'collider_porte', with serialized fields myDoor: {fileID: 0} and openTrigger: 1 (true). Use 'palteforme_cube' (fileID: 546628669, tag: Objet1) which has no SnapToTrigger MonoBehaviour in its scene meta.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "OnTriggerEnter",
+                  "parameter_fileID": [
+                    546628669
+                  ]
+                }
+              ]
+            }
+          ],
+          "triggerred_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 0,
+                  "method_name": "Exception.NullReferenceException at DoorOpenScript.OnTriggerEnter when calling snap.Snap(...) because other.GetComponent<SnapToTrigger>() returned null",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.5,
+          "source_object_fileID": 86838640,
+          "condition": "DoorOpenScript.OnTriggerEnter tag-mismatch branch. Scene MonoBehaviour component (guid: 5f8d06fe579502c4496842932d0afead, fileID: 11500000) is the settings for DoorOpenScript. Colliding object is 'Cube_salle1' (fileID: 816818218) which has SnapToTrigger attached via its scene MonoBehaviour (guid: 2723dba42bd113044ad231906b498006, fileID: 11500000), but its prefab meta tag is 'Cube' (not 'Objet1'). Expect: CompareTag('Objet1') fails, no Snap, no Animator.Play, no SetActive, openTrigger remains 1 (true).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "OnTriggerEnter",
+                  "parameter_fileID": [
+                    816818218
+                  ]
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.5,
+          "source_object_fileID": 86838640,
+          "condition": "DoorOpenScript.OnTriggerEnter tag-mismatch branch with a second cube for cross-check. Scene MonoBehaviour (guid: 5f8d06fe579502c4496842932d0afead, fileID: 11500000) on 'collider_porte'. Colliding object is 'Cube_test' (fileID: 1269095956) which has SnapToTrigger (guid: 2723dba42bd113044ad231906b498006, fileID: 11500000) but tag is 'Cube'. Expect: CompareTag('Objet1') fails; no side effects.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "OnTriggerEnter",
+                  "parameter_fileID": [
+                    1269095956
+                  ]
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Cube_salle1",
+          "triggerring_time": 2.0,
+          "source_object_fileID": 816818218,
+          "condition": "Direct invocation of SnapToTrigger.Snap to cover behavior of the attached script. Scene MonoBehaviour (guid: 2723dba42bd113044ad231906b498006, fileID: 11500000) is the settings for SnapToTrigger on 'Cube_salle1'. Expect: XRGrabInteractable and XRGeneralGrabTransformer components disabled; transform moved to collider_porte.transform.position with +0.4f Y offset; rotation set to Quaternion(0,0,0,0); Rigidbody constraints FreezeAll; isSnapped=true which causes continuous local Y rotation during Update.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "Snap",
+                  "parameter_fileID": [
+                    86838640
+                  ]
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Cube_test",
+          "triggerring_time": 2.0,
+          "source_object_fileID": 1269095956,
+          "condition": "Direct invocation of SnapToTrigger.Snap to cover the same behavior on a second instance. Scene MonoBehaviour (guid: 2723dba42bd113044ad231906b498006, fileID: 11500000) is the settings for SnapToTrigger on 'Cube_test'. Expect same outcomes as for 'Cube_salle1'.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "Snap",
+                  "parameter_fileID": [
+                    86838640
+                  ]
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.5,
+          "source_object_fileID": 86838640,
+          "condition": "Draft for full positive path coverage of DoorOpenScript.OnTriggerEnter including Animator and deactivation. Requires a collider object that BOTH is tagged 'Objet1' and has SnapToTrigger attached (not present in current data). Scene MonoBehaviour (guid: 5f8d06fe579502c4496842932d0afead) on 'collider_porte' must also have myDoor assigned to a valid Animator in the scene meta. Expect: snap.Snap(position), myDoor.Play('DoorOpen',0,0.0), collider_porte.SetActive(false), openTrigger=false.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "OnTriggerEnter",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        }
+      ]
+    }
+  ]
+}

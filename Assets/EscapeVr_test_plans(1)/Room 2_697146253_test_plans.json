@@ -1,0 +1,552 @@
+{
+  "taskUnits": [
+    {
+      "actionUnits": [
+        {
+          "type": "Grab",
+          "source_object_name": "Cube_salle2",
+          "source_object_fileID": 194480315,
+          "target_object_name": "collider_porte",
+          "target_object_fileID": 1137377008
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1137377008,
+          "condition": "MonoBehaviour (fileID: 1813076697) on collider_porte is script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized fields: checkSphere=0, checkCube=1, checkPyramid=0, roomDatas->fileID 697146254, checkCompile=0. collider_porte is child of trigger_cube under Room 2. On OnTriggerEnter with a GameObject tagged 'Cube' (e.g., Cube_salle2 fileID: 194480315 or Cube_test fileID: 1269095956), room2_trigger should call room2.SetCubeCheck() on MonoBehaviour fileID 697146254 and then call Snap(trigger.position) on the colliding object's SnapToTrigger (m_Script guid 2723dba42bd113044ad231906b498006).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Room 2",
+          "triggerring_time": 0.3,
+          "source_object_fileID": 697146253,
+          "condition": "MonoBehaviour (fileID: 697146254) on Room 2 is script room2 (m_Script guid 82aa235159f620648803cf53217af1e5). doorAnim references Animator fileID 521131961. When SphereChecked, CubeChecked, and PyramidChecked are all true, Update() sets doorOpen=true and doorAnim.Play('DoorOpen', 0, 0.0f) is invoked. After SetCubeCheck was triggered via collider_porte, invoke SetSphereCheck and SetPyramidCheck to complete the condition and validate door opening.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetSphereCheck",
+                  "parameter_fileID": []
+                },
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetPyramidCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Room 2",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 697146253,
+          "condition": "Idempotency check: With doorOpen already true in room2 (fileID: 697146254) after previous step, re-invoking a cube trigger should not replay 'DoorOpen' because Update() guards with !doorOpen. This verifies the guard condition in Update().",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1137377008,
+          "condition": "MonoBehaviour (fileID: 1813076697) on collider_porte is script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized fields: checkSphere=0, checkCube=1, checkPyramid=0, roomDatas->fileID 697146254 (Room 2's room2 script), checkCompile=0. On OnTriggerEnter with a GameObject tagged 'Cube' (e.g., Cube_salle2 fileID: 194480315), room2_trigger calls room2.SetCubeCheck() and then calls Snap(trigger.position) on the colliding object's SnapToTrigger (m_Script guid 2723dba42bd113044ad231906b498006).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Grab",
+          "source_object_name": "Pyramid_salle2",
+          "source_object_fileID": 863577851,
+          "target_object_name": "collider_porte",
+          "target_object_fileID": 1339877303
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1339877303,
+          "condition": "MonoBehaviour (fileID: 1339877307) on collider_porte is script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized fields: checkSphere=0, checkCube=0, checkPyramid=1, roomDatas->fileID 697146254 (Room 2's room2 script), checkCompile=0. On OnTriggerEnter with a GameObject tagged 'Pyramid' (e.g., Pyramid_salle2 fileID: 863577851), room2_trigger calls room2.SetPyramidCheck() and then calls Snap(trigger.position) on the colliding object's SnapToTrigger (m_Script guid 2723dba42bd113044ad231906b498006).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetPyramidCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Room 2",
+          "triggerring_time": 0.3,
+          "source_object_fileID": 697146253,
+          "condition": "MonoBehaviour (fileID: 697146254) on Room 2 is script room2 (m_Script guid 82aa235159f620648803cf53217af1e5). doorAnim references Animator fileID 521131961. After Cube and Pyramid triggers set CubeChecked and PyramidChecked, invoking SetSphereCheck completes the condition. In Update(), when SphereChecked && CubeChecked && PyramidChecked && !doorOpen, it sets doorOpen=true and calls doorAnim.Play('DoorOpen', 0, 0.0f).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetSphereCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Room 2",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 697146253,
+          "condition": "Idempotency check on room2 (fileID: 697146254). With doorOpen already true after previous step, re-invoking a check method should not replay 'DoorOpen' because Update() is guarded by !doorOpen.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Grab",
+          "source_object_name": "Sphere_salle2",
+          "source_object_fileID": 284893529,
+          "target_object_name": "collider_porte",
+          "target_object_fileID": 1137377008
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1137377008,
+          "condition": "MonoBehaviour (fileID: 1137377012) on collider_porte is script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized fields: checkSphere=1, checkCube=0, checkPyramid=0, roomDatas->fileID 697146254 (Room 2's room2 script), checkCompile=0. On OnTriggerEnter with a GameObject tagged 'Sphere' (Sphere_salle2 fileID: 284893529), room2_trigger should call room2.SetSphereCheck() and then call Snap(trigger.position) on the colliding object's SnapToTrigger (m_Script guid 2723dba42bd113044ad231906b498006).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetSphereCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1137377008,
+          "condition": "MonoBehaviour (fileID: 1813076697) on collider_porte is script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized fields: checkSphere=0, checkCube=1, checkPyramid=0, roomDatas->fileID 697146254 (Room 2's room2 script), checkCompile=0. On OnTriggerEnter with a GameObject tagged 'Cube' (e.g., Cube_salle2 fileID: 194480315), room2_trigger should call room2.SetCubeCheck() and then call Snap(trigger.position) on the colliding object's SnapToTrigger (m_Script guid 2723dba42bd113044ad231906b498006).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1339877303,
+          "condition": "MonoBehaviour (fileID: 1339877307) on collider_porte is script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized fields: checkSphere=0, checkCube=0, checkPyramid=1, roomDatas->fileID 697146254 (Room 2's room2 script), checkCompile=0. On OnTriggerEnter with a GameObject tagged 'Pyramid' (Pyramid_salle2 fileID: 863577851), room2_trigger should call room2.SetPyramidCheck() and then call Snap(trigger.position) on the colliding object's SnapToTrigger (m_Script guid 2723dba42bd113044ad231906b498006).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetPyramidCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Room 2",
+          "triggerring_time": 0.3,
+          "source_object_fileID": 697146253,
+          "condition": "MonoBehaviour (fileID: 697146254) on Room 2 is script room2 (m_Script guid 82aa235159f620648803cf53217af1e5). doorAnim references Animator fileID 521131961. After SetSphereCheck, SetCubeCheck, and SetPyramidCheck have been invoked by the three triggers, Update() detects SphereChecked && CubeChecked && PyramidChecked && !doorOpen, sets doorOpen=true, and calls doorAnim.Play('DoorOpen', 0, 0.0f).",
+          "triggerring_events": [],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Room 2",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 697146253,
+          "condition": "Idempotency guard validation for room2 (fileID: 697146254). With doorOpen already true, re-invoking any Set*Check should not replay 'DoorOpen' because Update() is guarded by !doorOpen.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1137377008,
+          "condition": "MonoBehaviour (fileID: 1137377012) on collider_porte maps to script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized: checkSphere=1, checkCube=0, checkPyramid=0, roomDatas->fileID 697146254 (Room 2 room2 script), checkCompile=0. OnTriggerEnter with a GameObject tagged 'Sphere' (Sphere_salle2 fileID: 284893529) should call room2.SetSphereCheck() and then Snap(trigger.position) on the colliding object's SnapToTrigger (guid 2723dba42bd113044ad231906b498006).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetSphereCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1137377008,
+          "condition": "MonoBehaviour (fileID: 1813076697) on collider_porte maps to script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized: checkSphere=0, checkCube=1, checkPyramid=0, roomDatas->fileID 697146254 (Room 2 room2 script), checkCompile=0. OnTriggerEnter with a GameObject tagged 'Cube' (Cube_salle2 fileID: 194480315) should call room2.SetCubeCheck() and then Snap(trigger.position) on the colliding object's SnapToTrigger (guid 2723dba42bd113044ad231906b498006).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1339877303,
+          "condition": "MonoBehaviour (fileID: 1339877307) on collider_porte maps to script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized: checkSphere=0, checkCube=0, checkPyramid=1, roomDatas->fileID 697146254 (Room 2 room2 script), checkCompile=0. OnTriggerEnter with a GameObject tagged 'Pyramid' (Pyramid_salle2 fileID: 863577851) should call room2.SetPyramidCheck() and then Snap(trigger.position) on the colliding object's SnapToTrigger (guid 2723dba42bd113044ad231906b498006).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetPyramidCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Room 2",
+          "triggerring_time": 0.3,
+          "source_object_fileID": 697146253,
+          "condition": "MonoBehaviour (fileID: 697146254) on Room 2 maps to script room2 (m_Script guid 82aa235159f620648803cf53217af1e5) with doorAnim->Animator fileID 521131961. After SphereChecked, CubeChecked, and PyramidChecked are true from prior triggers, Update() detects all checks and !doorOpen, sets doorOpen=true, and calls doorAnim.Play('DoorOpen', 0, 0.0f).",
+          "triggerring_events": [],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Room 2",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 697146253,
+          "condition": "Idempotency guard in room2 (fileID: 697146254): with doorOpen already true, re-invoking any Set*Check should not replay 'DoorOpen' due to !doorOpen condition in Update().",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1137377008,
+          "condition": "MonoBehaviour (fileID: 1137377012) on collider_porte (under trigger_sphere) is the scene settings for script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized: checkSphere=1, checkCube=0, checkPyramid=0, roomDatas -> MonoBehaviour fileID 697146254 on Room 2 (script room2, guid 82aa235159f620648803cf53217af1e5), checkCompile=0. On OnTriggerEnter with a GameObject tagged 'Sphere' (Sphere_salle2, fileID: 284893529, which has SnapToTrigger script guid 2723dba42bd113044ad231906b498006), room2_trigger should call room2.SetSphereCheck() and then Snap(trigger.position).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetSphereCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1137377008,
+          "condition": "MonoBehaviour (fileID: 1813076697) on collider_porte (under trigger_cube) is the scene settings for script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized: checkSphere=0, checkCube=1, checkPyramid=0, roomDatas -> MonoBehaviour fileID 697146254 on Room 2 (script room2, guid 82aa235159f620648803cf53217af1e5), checkCompile=0. On OnTriggerEnter with a GameObject tagged 'Cube' (Cube_salle2, fileID: 194480315, with SnapToTrigger script guid 2723dba42bd113044ad231906b498006), room2_trigger should call room2.SetCubeCheck() and then Snap(trigger.position).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1339877303,
+          "condition": "MonoBehaviour (fileID: 1339877307) on collider_porte (under trigger_pyramide) is the scene settings for script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized: checkSphere=0, checkCube=0, checkPyramid=1, roomDatas -> MonoBehaviour fileID 697146254 on Room 2 (script room2, guid 82aa235159f620648803cf53217af1e5), checkCompile=0. On OnTriggerEnter with a GameObject tagged 'Pyramid' (Pyramid_salle2, fileID: 863577851, with SnapToTrigger script guid 2723dba42bd113044ad231906b498006), room2_trigger should call room2.SetPyramidCheck() and then Snap(trigger.position).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetPyramidCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Room 2",
+          "triggerring_time": 0.3,
+          "source_object_fileID": 697146253,
+          "condition": "MonoBehaviour (fileID: 697146254) on Room 2 is the scene settings for script room2 (m_Script guid 82aa235159f620648803cf53217af1e5) with doorAnim -> Animator fileID 521131961. After SetSphereCheck, SetCubeCheck, and SetPyramidCheck have been invoked by the three triggers, Update() detects SphereChecked && CubeChecked && PyramidChecked && !doorOpen, sets doorOpen=true, and calls doorAnim.Play('DoorOpen', 0, 0.0f).",
+          "triggerring_events": [],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Room 2",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 697146253,
+          "condition": "Idempotency validation on room2 (MonoBehaviour fileID: 697146254). With doorOpen already true after previous step, re-invoking any Set*Check should not replay 'DoorOpen' due to the !doorOpen guard in Update().",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Grab",
+          "source_object_name": "Cube_test",
+          "source_object_fileID": 1269095956,
+          "target_object_name": "collider_porte",
+          "target_object_fileID": 1137377008
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1137377008,
+          "condition": "Repeat tag-based validation with another Cube instance. MonoBehaviour (fileID: 1813076697) on collider_porte (under trigger_cube) is room2_trigger (guid f90cc8c0ee6cc9746bf3259c5e5bf2bc) with checkCube=1 and roomDatas -> fileID 697146254 (room2). OnTriggerEnter with Cube_test (fileID: 1269095956, tag 'Cube', SnapToTrigger guid 2723dba42bd113044ad231906b498006) should again invoke room2.SetCubeCheck() and Snap, confirming behavior is tag-driven and independent of specific instance.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1137377008,
+          "condition": "MonoBehaviour (fileID: 1137377012) on collider_porte (under trigger_sphere) is the scene settings for script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized: checkSphere=1, checkCube=0, checkPyramid=0, roomDatas -> MonoBehaviour fileID 697146254 on Room 2 (script room2, guid 82aa235159f620648803cf53217af1e5), checkCompile=0. OnTriggerEnter with a 'Sphere' (Sphere_salle2 fileID: 284893529, SnapToTrigger guid 2723dba42bd113044ad231906b498006) calls room2.SetSphereCheck() and then Snap(trigger.position).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetSphereCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1137377008,
+          "condition": "MonoBehaviour (fileID: 1813076697) on collider_porte (under trigger_cube) is the scene settings for script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized: checkSphere=0, checkCube=1, checkPyramid=0, roomDatas -> MonoBehaviour fileID 697146254 on Room 2 (script room2, guid 82aa235159f620648803cf53217af1e5), checkCompile=0. OnTriggerEnter with a 'Cube' (Cube_salle2 fileID: 194480315, SnapToTrigger guid 2723dba42bd113044ad231906b498006) calls room2.SetCubeCheck() and then Snap(trigger.position).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1339877303,
+          "condition": "MonoBehaviour (fileID: 1339877307) on collider_porte (under trigger_pyramide) is the scene settings for script room2_trigger (m_Script guid f90cc8c0ee6cc9746bf3259c5e5bf2bc). Serialized: checkSphere=0, checkCube=0, checkPyramid=1, roomDatas -> MonoBehaviour fileID 697146254 on Room 2 (script room2, guid 82aa235159f620648803cf53217af1e5), checkCompile=0. OnTriggerEnter with a 'Pyramid' (Pyramid_salle2 fileID: 863577851, SnapToTrigger guid 2723dba42bd113044ad231906b498006) calls room2.SetPyramidCheck() and then Snap(trigger.position).",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetPyramidCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Room 2",
+          "triggerring_time": 0.3,
+          "source_object_fileID": 697146253,
+          "condition": "MonoBehaviour (fileID: 697146254) on Room 2 is the scene settings for script room2 (m_Script guid 82aa235159f620648803cf53217af1e5) with doorAnim -> Animator fileID 521131961. After SetSphereCheck, SetCubeCheck, and SetPyramidCheck are true from prior triggers, Update() detects SphereChecked && CubeChecked && PyramidChecked && !doorOpen, sets doorOpen=true, and calls doorAnim.Play('DoorOpen', 0, 0.0f).",
+          "triggerring_events": [],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Room 2",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 697146253,
+          "condition": "Idempotency validation on room2 (MonoBehaviour fileID: 697146254). With doorOpen already true, re-invoking any Set*Check should not replay 'DoorOpen' due to the !doorOpen guard in Update().",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 1137377008,
+          "condition": "Repeat tag-based validation with another Cube instance. MonoBehaviour (fileID: 1813076697) on collider_porte (under trigger_cube) is room2_trigger (guid f90cc8c0ee6cc9746bf3259c5e5bf2bc) with checkCube=1 and roomDatas -> fileID 697146254 (room2). OnTriggerEnter with Cube_test (fileID: 1269095956, tag 'Cube', SnapToTrigger guid 2723dba42bd113044ad231906b498006) should again invoke room2.SetCubeCheck() and Snap, confirming behavior is tag-driven and instance-agnostic.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 697146254,
+                  "method_name": "SetCubeCheck",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        }
+      ]
+    }
+  ]
+}
