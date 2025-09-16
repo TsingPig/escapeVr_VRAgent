@@ -1,0 +1,91 @@
+{
+  "taskUnits": [
+    {
+      "actionUnits": [
+        {
+          "type": "Grab",
+          "source_object_name": "Cube_salle1",
+          "source_object_fileID": 816818218,
+          "target_object_name": "collider_porte",
+          "target_object_fileID": 86838640
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 86838640,
+          "condition": "OnTriggerEnter of DoorOpenScript (MonoBehaviour with m_Script.guid=5f8d06fe579502c4496842932d0afead; this MonoBehaviour block is the serialized settings of the attached script) on GameObject 'collider_porte' is fired by the grabbed object 'Cube_salle1' (id=816818218) that compares tag 'Objet1' true and has SnapToTrigger attached (MonoBehaviour with m_Script.guid=2723dba42bd113044ad231906b498006; this MonoBehaviour block is the serialized settings of the SnapToTrigger script). Scene meta shows DoorOpenScript.openTrigger=1 (true) and myDoor is currently unassigned (myDoor.fileID=0). Expected behavior: DoorOpenScript calls other.GetComponent<SnapToTrigger>().Snap(transform.position), attempts myDoor.Play('DoorOpen',0,0.0), sets collider_porte inactive, and sets openTrigger=false.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 11500000,
+                  "method_name": "Snap",
+                  "parameter_fileID": []
+                },
+                {
+                  "script_fileID": 0,
+                  "method_name": "Animator.Play('DoorOpen',0,0.0)",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 86838640,
+          "condition": "Retry triggering after previous Trigger in same run. Postconditions from prior step: collider_porte was SetActive(false) and DoorOpenScript.openTrigger has been set to false. Expect OnTriggerEnter to not fire or produce no effect (no Snap, no Animator.Play).",
+          "triggerring_events": [],
+          "triggerred_events": []
+        },
+        {
+          "type": "Grab",
+          "source_object_name": "palteforme_cube",
+          "source_object_fileID": 546628669,
+          "target_object_name": "collider_porte",
+          "target_object_fileID": 86838640
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "collider_porte",
+          "triggerring_time": 0.2,
+          "source_object_fileID": 86838640,
+          "condition": "Fresh scene/reset state required: collider_porte active, DoorOpenScript.openTrigger=1. OnTriggerEnter fired by 'palteforme_cube' (id=546628669) which has tag 'Objet1' but no SnapToTrigger component (per scene meta). DoorOpenScript will pass CompareTag but snap will be null; calling snap.Snap(...) would raise a NullReferenceException. This covers the missing-component failure path. MonoBehaviour component with guid=5f8d06fe... is the DoorOpenScript settings that control this behavior.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": []
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Transform",
+          "source_object_name": "Room 1",
+          "source_object_fileID": 1447047946,
+          "target_position": {
+            "x": 0.5,
+            "y": 0.0,
+            "z": 0.5
+          },
+          "target_rotation": {
+            "x": 0.0,
+            "y": 15.0,
+            "z": 0.0
+          },
+          "target_scale": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "triggerring_events": [],
+          "triggerred_events": [],
+          "triggerring_time": 0.5
+        }
+      ]
+    }
+  ]
+}
