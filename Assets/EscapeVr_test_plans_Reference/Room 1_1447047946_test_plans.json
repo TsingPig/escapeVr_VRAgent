@@ -1,0 +1,15 @@
+{
+  "taskUnits": [
+    {
+      "actionUnits": [
+        {
+          "type": "Grab",
+          "source_object_name": "Cube_salle1",
+          "source_object_fileID": 816818218,
+          "target_object_name": "collider_porte",
+          "target_object_fileID": 86838640
+        }
+      ]
+    }
+  ]
+}
