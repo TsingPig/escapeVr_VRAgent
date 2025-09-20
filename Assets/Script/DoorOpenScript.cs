@@ -12,16 +12,18 @@ public class DoorOpenScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         snap = other.GetComponent<SnapToTrigger>();
-        if (other.CompareTag("Objet1"))
+        if(other.CompareTag("Objet1"))
         {
-            if (openTrigger)
+            if(openTrigger)
             {
                 snap.Snap(gameObject.transform.position);
-                myDoor.Play("DoorOpen",0,0.0f);
+                myDoor.Play("DoorOpen", 0, 0.0f);
                 gameObject.SetActive(false);
                 openTrigger = false;
             }
         }
     }
 }
+
