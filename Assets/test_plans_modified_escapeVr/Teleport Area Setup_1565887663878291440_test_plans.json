@@ -1,0 +1,65 @@
+{
+  "taskUnits": [
+    {
+      "actionUnits": [
+        {
+          "type": "Trigger",
+          "source_object_name": "Teleport Anchor",
+          "triggerring_time": 0.1,
+          "source_object_fileID": 1071784861,
+          "condition": "MonoBehaviour id 3953368309659336407 in the scene meta maps to the Unity.VRTemplate.AnchorVisuals script (script guid b2dd7fabdb14fca498bd9e0def11ab19) attached to the Teleport Anchor prefab instance (fileID 1071784861), child of 'Teleport Area Setup' (GUID 1565887663878291440). This Trigger simulates a teleport interactor entering hover. Expected: fade animation plays forward from start, arrow scale set to initial, arrow height tweens to m_TargetArrowHeight over m_ArrowAnimationDuration using m_AnimationCurve. Assumes a Collider is present on the Teleport Anchor (typical for XR teleport anchors) to satisfy interaction constraints.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 3953368309659336407,
+                  "method_name": "OnAnchorEnter",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Teleport Anchor",
+          "triggerring_time": 0.05,
+          "source_object_fileID": 1071784861,
+          "condition": "Same MonoBehaviour-to-script mapping as above. This Trigger simulates the moment of teleportation to verify the visual is hidden. Expected: arrow visual scale set to zero immediately.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 3953368309659336407,
+                  "method_name": "HideArrowOnTeleport",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        },
+        {
+          "type": "Trigger",
+          "source_object_name": "Teleport Anchor",
+          "triggerring_time": 0.1,
+          "source_object_fileID": 1071784861,
+          "condition": "Same MonoBehaviour-to-script mapping as above. This Trigger simulates a teleport interactor exiting hover. Expected: fade animation plays in reverse (speed -1.5) from end, arrow height tweens back to 0 over m_ArrowAnimationDuration using m_AnimationCurve.",
+          "triggerring_events": [
+            {
+              "methodCallUnits": [
+                {
+                  "script_fileID": 3953368309659336407,
+                  "method_name": "OnAnchorExit",
+                  "parameter_fileID": []
+                }
+              ]
+            }
+          ],
+          "triggerred_events": []
+        }
+      ]
+    }
+  ]
+}
