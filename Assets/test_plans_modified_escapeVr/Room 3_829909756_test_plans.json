@@ -135,7 +135,7 @@
             "y": 11.4,
             "z": 16.6
           }
-        },
+        },  
         {
           "type": "Trigger",
           "source_object_name": "Cube Interactable",

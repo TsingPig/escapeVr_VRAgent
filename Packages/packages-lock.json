@@ -9,7 +9,7 @@
         "com.unity.settings-manager": "1.0.1",
         "com.unity.xr.interaction.toolkit": "2.0.4"
       },
-      "hash": "05ff9e2748b3c8d58f61b460021ad76b80b991c6"
+      "hash": "79a86fffa72adec3d7df6aa293c86502eb98aa97"
     },
     "com.henrylab.vrexplorer": {
       "version": "https://github.com/TsingPig/VRExplorer_Release.git",
@@ -20,7 +20,7 @@
         "com.unity.settings-manager": "1.0.1",
         "com.unity.xr.interaction.toolkit": "2.0.4"
       },
-      "hash": "f838540607b85d3fd1535fd24ee927f6a09de332"
+      "hash": "a3e2955a5070f17029ae184e0a6d60421bdf8a4b"
     },
     "com.unity.burst": {
       "version": "1.8.18",
